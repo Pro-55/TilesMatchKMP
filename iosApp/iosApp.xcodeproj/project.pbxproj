@@ -10,8 +10,11 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		152B45102A928680001CF397 /* FlowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152B450F2A928680001CF397 /* FlowExtensions.swift */; };
+		1579228F2A928BE40082C197 /* OptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579228E2A928BE40082C197 /* OptionsScreen.swift */; };
+		157922912A928C050082C197 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157922902A928C050082C197 /* OptionsViewModel.swift */; };
+		157922942A928C1E0082C197 /* OptionsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157922932A928C1E0082C197 /* OptionsGrid.swift */; };
+		157922982A928C540082C197 /* Glide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157922972A928C540082C197 /* Glide.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,9 +34,12 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		152B450F2A928680001CF397 /* FlowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowExtensions.swift; sourceTree = "<group>"; };
+		1579228E2A928BE40082C197 /* OptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreen.swift; sourceTree = "<group>"; };
+		157922902A928C050082C197 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
+		157922932A928C1E0082C197 /* OptionsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsGrid.swift; sourceTree = "<group>"; };
+		157922972A928C540082C197 /* Glide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glide.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +65,8 @@
 		152B450E2A92866E001CF397 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				157922992A928CBC0082C197 /* extensions */,
+				157922962A928C4A0082C197 /* views */,
+				157922952A928C360082C197 /* extensions */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -67,18 +74,44 @@
 		15403BE32A92838100CF4AFD /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF82242A565900829871 /* ContentView.swift */,
+				1579228D2A928BD70082C197 /* options */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
 		};
-		157922992A928CBC0082C197 /* extensions */ = {
+		1579228D2A928BD70082C197 /* options */ = {
+			isa = PBXGroup;
+			children = (
+				157922922A928C140082C197 /* views */,
+				1579228E2A928BE40082C197 /* OptionsScreen.swift */,
+				157922902A928C050082C197 /* OptionsViewModel.swift */,
+			);
+			path = options;
+			sourceTree = "<group>";
+		};
+		157922922A928C140082C197 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				157922932A928C1E0082C197 /* OptionsGrid.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		157922952A928C360082C197 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
 				152B450F2A928680001CF397 /* FlowExtensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		157922962A928C4A0082C197 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				157922972A928C540082C197 /* Glide.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		7555FF72242A565900829871 = {
@@ -210,8 +243,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				152B45102A928680001CF397 /* FlowExtensions.swift in Sources */,
+				157922982A928C540082C197 /* Glide.swift in Sources */,
+				157922912A928C050082C197 /* OptionsViewModel.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				1579228F2A928BE40082C197 /* OptionsScreen.swift in Sources */,
+				157922942A928C1E0082C197 /* OptionsGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -324,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
