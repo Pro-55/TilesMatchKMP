@@ -1,17 +1,22 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(JavaVersion.VERSION_17.toString()))
+    }
+
     android {
         compilations.all {
             kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_1_8.toString()
+                jvmTarget = JavaVersion.VERSION_17.toString()
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -23,13 +28,26 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                // Coroutines
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
+                // Serialization
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                // Coroutines
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+            }
+        }
         val androidUnitTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
@@ -54,7 +72,7 @@ kotlin {
 
 android {
     namespace = "com.example.tiles_match_kmp"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 21
     }
