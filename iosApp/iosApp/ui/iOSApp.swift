@@ -1,10 +1,13 @@
 import SwiftUI
+import shared
 
 @main
 struct iOSApp: App {
-	var body: some Scene {
-		WindowGroup {
-			ContentView()
-		}
-	}
+    private let repository: Repository = RepositoryImpl()
+    
+    var body: some Scene {
+        WindowGroup {
+            OptionsScreen(repository: repository)
+        }
+    }
 }
