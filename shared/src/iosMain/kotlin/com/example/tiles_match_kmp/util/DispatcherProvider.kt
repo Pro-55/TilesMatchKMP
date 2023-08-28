@@ -14,5 +14,3 @@ actual object DispatcherProvider {
     actual val IO: CoroutineDispatcher
         get() = newFixedThreadPoolContext(nThreads = 200, name = "IO")
 }
-
-internal actual val dispatcherProvider: DispatcherProvider = DispatcherProvider
