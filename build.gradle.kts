@@ -1,22 +1,10 @@
-buildscript {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.1.0")
-        classpath(kotlin(module = "gradle-plugin", version = "1.8.21"))
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.43.2")
-        classpath(kotlin(module = "serialization", version = "1.8.21"))
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+plugins {
+    id("com.android.application") version "8.1.1" apply false
+    id("com.android.library") version "8.1.1" apply false
+    kotlin("android") version "1.9.10" apply false
+    kotlin("multiplatform") version "1.9.10" apply false
+    id("com.google.dagger.hilt.android") version "2.47" apply false
+    kotlin("plugin.serialization") version "1.9.10" apply false
 }
 
 tasks.register("clean", Delete::class) {

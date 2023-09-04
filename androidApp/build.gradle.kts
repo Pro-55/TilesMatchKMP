@@ -18,7 +18,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     buildTypes {
         getByName("debug") {
@@ -54,31 +54,29 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21")
+    implementation(kotlin(module = "stdlib-jdk7", version = "1.9.10"))
     implementation("androidx.core:core-ktx:1.10.1")
 
     // Shared
     implementation(project(":shared"))
 
     // Compose
-    implementation(platform("androidx.compose:compose-bom:2022.10.00"))
+    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.ui:ui-tooling")
+    // Livedata
+    implementation("androidx.compose.runtime:runtime-livedata")
 
     // Activity
     implementation("androidx.activity:activity-compose:1.7.2")
 
     // Accompanist
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.25.1")
-    implementation("com.google.accompanist:accompanist-navigation-animation:0.25.1")
-
-    // Livedata
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.33.1-alpha")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.43.2")
-    kapt("com.google.dagger:hilt-compiler:2.43.2")
+    implementation("com.google.dagger:hilt-android:2.47")
+    kapt("com.google.dagger:hilt-compiler:2.47")
 
     // Hilt Compose
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
@@ -89,7 +87,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.6.0")
+    implementation("androidx.navigation:navigation-compose:2.7.1")
 
     // Glide
     implementation("com.github.bumptech.glide:compose:1.0.0-alpha.1")
