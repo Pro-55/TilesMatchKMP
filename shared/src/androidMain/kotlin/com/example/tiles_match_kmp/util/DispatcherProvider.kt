@@ -13,5 +13,3 @@ actual object DispatcherProvider {
     actual val IO: CoroutineDispatcher
         get() = Dispatchers.IO
 }
-
-internal actual val dispatcherProvider: DispatcherProvider = DispatcherProvider

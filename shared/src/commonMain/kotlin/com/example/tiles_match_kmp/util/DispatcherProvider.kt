@@ -8,5 +8,3 @@ expect object DispatcherProvider {
     val Unconfined: CoroutineDispatcher
     val IO: CoroutineDispatcher
 }
-
-internal expect val dispatcherProvider: DispatcherProvider
