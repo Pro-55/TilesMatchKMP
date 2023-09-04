@@ -13,12 +13,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.tiles_match_kmp.android.framework.Screen
 import com.example.tiles_match_kmp.android.theme.TilesMatchKmpTheme
 import com.example.tiles_match_kmp.android.ui.options.OptionsScreen
-import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.google.accompanist.navigation.animation.composable
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -36,8 +36,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberAnimatedNavController()
-                    AnimatedNavHost(
+                    val navController = rememberNavController()
+                    NavHost(
                         navController = navController,
                         startDestination = Screen.OptionsScreen.route
                     ) {
