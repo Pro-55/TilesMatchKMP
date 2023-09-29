@@ -31,10 +31,10 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 // Coroutines
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+                implementation(libs.coroutines.core)
 
                 // Serialization
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+                implementation(libs.serialization.json)
             }
         }
         val commonTest by getting {
@@ -45,7 +45,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 // Coroutines
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+                implementation(libs.coroutines.android)
             }
         }
         val androidUnitTest by getting
@@ -72,8 +72,8 @@ kotlin {
 
 android {
     namespace = "com.example.tiles_match_kmp"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 21
+        minSdk = libs.versions.minSdk.get().toInt()
     }
 }

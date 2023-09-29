@@ -7,10 +7,10 @@ plugins {
 
 android {
     namespace = "com.example.tiles_match_kmp.android"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 21
-        targetSdk = 34
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
@@ -18,7 +18,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
     buildTypes {
         getByName("debug") {
@@ -51,46 +51,44 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     // Kotlin
-    implementation(kotlin(module = "stdlib-jdk7", version = "1.9.10"))
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(libs.androidx.core)
 
     // Shared
     implementation(project(":shared"))
 
     // Compose
-    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui-tooling")
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.ui.tooling)
     // Livedata
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation(libs.compose.runtime.livedata)
 
     // Activity
-    implementation("androidx.activity:activity-compose:1.7.2")
+    implementation(libs.androidx.activity.compose)
 
     // Accompanist
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.33.1-alpha")
+    implementation(libs.accompanist.systemuicontroller)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt("com.google.dagger:hilt-compiler:2.47")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // Hilt Compose
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation(libs.hilt.navigation.compose)
 
     // Coroutine Lifecycle Scopes
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.lifecycle.runtime)
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.7.1")
+    implementation(libs.navigation.compose)
 
     // Glide
-    implementation("com.github.bumptech.glide:compose:1.0.0-alpha.1")
+    implementation(libs.glide)
 }
 
 kapt {
